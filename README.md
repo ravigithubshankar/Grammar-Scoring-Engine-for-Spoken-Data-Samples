@@ -16,18 +16,53 @@ Given an audio clip of a candidate speaking, predict a **grammar score (1–5)**
 
 ---
 
-## 📁 Project Structure
+---
 
-.                                # Root directory of your project
-├── train.csv                   # Training labels & audio file names
-├── test.csv                    # Test file names (no labels)
-├── audios_train/               # Folder containing training audio (.wav) files
-├── audios_test/                # Folder containing test audio (.wav) files
-├── transcribed_dataset.csv     # Cached transcriptions (output of Wav2Vec2)
-├── bert_bilstm_model.pt        # Saved PyTorch model (BERT + BiLSTM)
-├── submission.csv              # Final predictions for submission
-├── scripts/                    # Folder containing modular Python scripts
-│   ├── textranscription.py           # Script for audio transcription using Wav2Vec2
-│   ├── preprocess.py           # Script for text cleaning and tokenization
-│   ├── grammar_score_model.py                # Model definition (BERT + BiLSTM) Training loop for the model
-│   └── inference.py              # Inference script that generates submission.csv
+## 🛠️ Pipeline
+
+### 1. 🎙️ Audio Transcription
+- Model: `facebook/wav2vec2-base-960h`
+- Output: Lowercased text using `batch_decode`.
+
+### 2. 🧹 Text Preprocessing
+- Remove punctuation, normalize spaces, lowercase.
+
+### 3. 🧠 Modeling
+- Architecture: **BERT Embeddings → BiLSTM → Dense Regression Head**
+- Loss: **MSELoss**, optional Pearson/CCC loss
+- Framework: PyTorch
+
+### 4. 🧪 Evaluation
+- Metric: **Pearson Correlation** on validation set.
+- Visualization: Score distributions, loss curves.
+
+---
+
+## 📈 Results
+
+| Metric        | Value      |
+|---------------|------------|
+| Pearson (val) | `0.599`     |
+| MSE (val)     | `5.78 50 epochs`     |
+
+Sample visualizations:
+- ✅ Score distributions by label
+- ✅ Attention heatmaps (optional)
+- ✅ Confusion/box plots (optional)
+
+---
+
+## 🧪 Running the Pipeline
+
+```bash
+# Step 1: Transcribe audio
+python scripts/transcribe.py
+
+# Step 2: Preprocess text
+python scripts/preprocess.py
+
+# Step 3: Train model
+python scripts/train.py
+
+# Step 4: Run inference on test set
+python scripts/predict.py
