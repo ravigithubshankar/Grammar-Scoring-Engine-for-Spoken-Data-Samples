@@ -50,6 +50,9 @@ Given an audio clip of a candidate speaking, predict a **grammar score (1–5)**
 
 ---
 
+![image](https://github.com/user-attachments/assets/3a93cbab-e90d-47c6-b378-f92c55f2b9e9)
+
+
 ## 🧪 Running the Pipeline
 
 ```bash
@@ -66,5 +69,5 @@ python grammar_score_model.py
 python inference.py
 
 
-![image](https://github.com/user-attachments/assets/b3a02307-cc42-4ace-b78a-a03b10c7068b)
+
 
