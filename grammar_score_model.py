@@ -53,3 +53,6 @@ for epoch in range(50):  # You can increase this
         total_loss += loss.item()
 
     print(f"Epoch {epoch+1} | Loss: {total_loss:.4f}")
+torch.save(model.state_dict(), "bert_bilstm_regression.pth")
+print(" Model saved as bert_bilstm_regression.pth")
+tokenizer.save_pretrained("bert_tokenizer/")
