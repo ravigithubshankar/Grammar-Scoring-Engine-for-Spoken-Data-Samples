@@ -2,7 +2,11 @@
 
 This repository contains a pipeline to evaluate the grammatical accuracy of spoken audio using a fusion of **ASR (Automatic Speech Recognition)** and **deep learning models**. The solution transcribes audio using Wav2Vec2, preprocesses the text, and predicts grammar scores using a **BERT + BiLSTM regression model**.
 
+
 ---
+
+![image](https://github.com/user-attachments/assets/96c6b4fa-fbad-4991-8043-4d7349839b64)
+Architecture
 
 ## 🚀 Overview
 
@@ -13,8 +17,6 @@ Given an audio clip of a candidate speaking, predict a **grammar score (1–5)**
 - **`train.csv`**: Contains audio file names + grammar labels.
 - **`audios_train/`**: Folder of training `.wav` files.
 - **`test.csv`** / **`audios_test/`**: Evaluation set without labels.
-
----
 
 ---
 
@@ -45,24 +47,24 @@ Given an audio clip of a candidate speaking, predict a **grammar score (1–5)**
 | Pearson (val) | `0.599`     |
 | MSE (val)     | `5.78 50 epochs`     |
 
-Sample visualizations:
-- ✅ Score distributions by label
-- ✅ Attention heatmaps (optional)
-- ✅ Confusion/box plots (optional)
 
 ---
 
 ## 🧪 Running the Pipeline
 
 ```bash
-# Step 1: Transcribe audio
-python scripts/transcribe.py
+# Step 1: Texttranscription
+python texttranscription.py
 
 # Step 2: Preprocess text
-python scripts/preprocess.py
+python preprocess.py
 
 # Step 3: Train model
-python scripts/train.py
+python grammar_score_model.py
 
 # Step 4: Run inference on test set
-python scripts/predict.py
+python inference.py
+
+
+![image](https://github.com/user-attachments/assets/b3a02307-cc42-4ace-b78a-a03b10c7068b)
+
