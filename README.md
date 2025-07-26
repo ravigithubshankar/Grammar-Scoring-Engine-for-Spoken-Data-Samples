@@ -2,7 +2,6 @@
 
 This repository contains a pipeline to evaluate the grammatical accuracy of spoken audio using a fusion of **ASR (Automatic Speech Recognition)** and **deep learning models**. The solution transcribes audio using Wav2Vec2, preprocesses the text, and predicts grammar scores using a **BERT + BiLSTM regression model**.
 
-
 ---
 
 ![image](https://github.com/user-attachments/assets/96c6b4fa-fbad-4991-8043-4d7349839b64)
