@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/css/main.f855e6bc.css",
+    "main.js": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/js/main.33e5c95c.js",
+    "static/js/453.96453769.chunk.js": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/js/453.96453769.chunk.js",
+    "static/media/logo.svg": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/index.html",
+    "main.f855e6bc.css.map": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/css/main.f855e6bc.css.map",
+    "main.33e5c95c.js.map": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/js/main.33e5c95c.js.map",
+    "453.96453769.chunk.js.map": "/Grammar-Scoring-Engine-for-Spoken-Data-Samples/static/js/453.96453769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.33e5c95c.js"
+  ]
+}
